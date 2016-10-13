@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74912F15-45DF-4D29-9370-5999C6F38037}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZippyCoder</RootNamespace>
+    <AssemblyName>ZippyCoder</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ZippyCoder.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.TextTemplating, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>T4Engine\Microsoft.VisualStudio.TextTemplating.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data">
+      <HintPath>..\..\dll\mysqllibs\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\Config.cs" />
+    <Compile Include="Helper\AbstractCoder.cs" />
+    <Compile Include="Helper\DataTypeExtender.cs" />
+    <Compile Include="Helper\Helper.cs" />
+    <Compile Include="Helper\PluginIndicatorAttribute.cs" />
+    <Compile Include="Helper\ProjectParser.cs" />
+    <Compile Include="Helper\TypeConverter.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ConnectMysqlFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ConnectMysqlFrm.Designer.cs">
+      <DependentUpon>ConnectMysqlFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ConnectSqlServerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ConnectSqlServerFrm.Designer.cs">
+      <DependentUpon>ConnectSqlServerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProjectFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ProjectFrm.Designer.cs">
+      <DependentUpon>ProjectFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Col.cs" />
+    <Compile Include="Entity\Enums.cs" />
+    <Compile Include="Entity\ForeignKeyMap.cs" />
+    <Compile Include="Entity\Project.cs" />
+    <Compile Include="Entity\Table.cs" />
+    <Compile Include="Logic\Helpler.cs" />
+    <Compile Include="Logic\SqlMonitor.cs" />
+    <Compile Include="Logic\TypeConverter.cs" />
+    <Compile Include="UI\MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4Engine\T4Creator.cs" />
+    <Compile Include="T4Engine\ZippyT4Host.cs" />
+    <Compile Include="UI\TreeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TreeFrm.Designer.cs">
+      <DependentUpon>TreeFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TableFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TableFrm.Designer.cs">
+      <DependentUpon>TableFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ColFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ColFrm.Designer.cs">
+      <DependentUpon>ColFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\T4SettingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\T4SettingFrm.Designer.cs">
+      <DependentUpon>T4SettingFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\ConnectMysqlFrm.resx">
+      <DependentUpon>ConnectMysqlFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ConnectSqlServerFrm.resx">
+      <DependentUpon>ConnectSqlServerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ProjectFrm.resx">
+      <DependentUpon>ProjectFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TreeFrm.resx">
+      <DependentUpon>TreeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TableFrm.resx">
+      <DependentUpon>TableFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ColFrm.resx">
+      <DependentUpon>ColFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\T4SettingFrm.resx">
+      <DependentUpon>T4SettingFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\base_connect-16.png" />
+    <Content Include="Resources\build.png" />
+    <Content Include="Resources\close2-16.png" />
+    <Content Include="Resources\copy-16.png" />
+    <Content Include="Resources\database.png" />
+    <Content Include="Resources\database_connect.png" />
+    <Content Include="Resources\edit.png" />
+    <Content Include="Resources\file.png" />
+    <None Include="Resources\news.png" />
+    <Content Include="Resources\open.png" />
+    <Content Include="Resources\paste.png" />
+    <Content Include="Resources\power-16.png" />
+    <None Include="Resources\project.png" />
+    <Content Include="Resources\question-16.png" />
+    <Content Include="Resources\save.png" />
+    <Content Include="ZippyCoder.ico" />
+    <Content Include="T4Engine\Microsoft.VisualStudio.TextTemplating.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChurSkin\ChurSkin.csproj">
+      <Project>{a03ff0d7-82de-4a69-bf1d-70bf3cf9ff92}</Project>
+      <Name>ChurSkin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
